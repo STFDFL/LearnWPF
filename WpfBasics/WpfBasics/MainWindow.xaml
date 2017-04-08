@@ -11,7 +11,7 @@
         <StackPanel>
 
             <!-- https://www.youtube.com/watch?v=Vjldip84CXQ -->
-            <!-- Stopped at 13.11 -->
+            <!-- Stopped at 20.00 -->
             <!-- Buttons -->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -26,6 +26,34 @@
             </Grid>
 
             <TextBlock Text="Pulse Properties" FontWeight="Bold" Margin="10" />
+            
+            <!-- Description -->
+            <TextBlock Text="Description"/>
+            <TextBox Padding="2" />
+
+            <!-- Status and Revision -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Status -->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0 ">
+                    <TextBlock Text="Status"/>
+                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
+                </StackPanel>
+
+                <!-- Revision -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Revision"/>
+                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Part Number -->
+            <TextBlock Text="Part Number"/>
+            <TextBox IsReadOnly="True" Background="LightGray" Padding="2" />
 
         </StackPanel>
     </Border>
