@@ -10,63 +10,112 @@
     <Border Padding="10">
         <StackPanel>
 
-            <!-- https://www.youtube.com/watch?v=Vjldip84CXQ -->
-            <!-- Stopped at 20.00 -->
-            <!-- Buttons -->
+            <!-- Property Value -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Property Value" Margin="20 0 0 0" Grid.Column="0"  />
+                <TextBlock Text="Property Value" Margin="0 0 0 0" Grid.Column="1"  />
                 <TextBox Padding="2" Grid.Column="2" />
             </Grid>
 
+            <!-- Size in sqm -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Saved Funds" Margin="20 10 0 0" Grid.Column="0"  />
+                <TextBlock Text="Size in sqm" Margin="0 5 0 0" Grid.Column="1"  />
+                <TextBox Padding="2" Margin="0 5 0 0" Grid.Column="2" />
+            </Grid>
+
+            <!-- Saved Funds -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Saved Funds" Margin="0 10 0 0" Grid.Column="1"  />
                 <TextBox Padding="2" Margin="0 10 0 0" Grid.Column="2" />
             </Grid>
 
+            <!-- Savings per week -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Saved Funds" Margin="20 10 0 0" Grid.Column="0"  />
-                <TextBox Padding="2" Margin="0 10 0 0" Grid.Column="2" />
+                <TextBlock Text="Savings per week" Margin="0 5 0 0" Grid.Column="1"  />
+                <TextBox Padding="2" Margin="0 5 0 0" Grid.Column="2" />
             </Grid>
+           
+            <!-- First Home Grant Checkbox -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox Content=" First Home Grant" Margin="0 20 0 0" Grid.Column="1" />
+            </Grid>
+
+            <!-- Upfront Costs -->
+            <TextBlock Text="Upfront Costs includes a rouh estimate of Stamp Duty and other &#x0a;legal fees that usually apply within 30 days from settlement." Margin="10 10 0 0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Upfront Costs" Margin="0 10 0 0" Grid.Column="1"  />
+                <TextBox  IsReadOnly="True" Padding="2" Margin="0 10 0 0" Grid.Column="2" Background="LightGray"/>
+            </Grid>
+
+            <!-- Button Calculate -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Button Content="CALCULATE" Padding="2" Margin="0 40 0 0" Grid.Column="1" />
+            </Grid>
+            <!-- Weeks to goal -->
             
-            <!-- Description -->
-            <TextBlock Text="Description"/>
-            <TextBox Padding="2" />
-
-            <!-- Status and Revision -->
+            <!-- Deposit Required -->
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-
-                <!-- Status -->
-                <StackPanel Grid.Column="0" Margin="0 0 10 0 ">
-                    <TextBlock Text="Status"/>
-                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
-                </StackPanel>
-
-                <!-- Revision -->
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="Revision"/>
-                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
-                </StackPanel>
+                <TextBlock Text="Deposit Required" Margin="0 20 0 0" Grid.Column="1"  />
+                <TextBox Padding="2" Margin="0 20 0 0" Grid.Column="2" />
+            </Grid>
+            <!-- Weeks to goal -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Weeks to goal" Margin="0 20 0 0" Grid.Column="1"  />
+                <TextBox Padding="2" Margin="0 20 0 0" Grid.Column="2" />
             </Grid>
 
-            <!-- Part Number -->
-            <TextBlock Text="Part Number"/>
-            <TextBox IsReadOnly="True" Background="LightGray" Padding="2" />
 
         </StackPanel>
     </Border>
