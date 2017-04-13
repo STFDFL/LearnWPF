@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfBasics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DepositCalculator"
+        mc:Ignorable="d"
+        Title="DepositCalculator" Height="600" Width="400">
+
+    <Border Padding="10">
+        <StackPanel>
+
+            <!-- https://www.youtube.com/watch?v=Vjldip84CXQ -->
+            <!-- Stopped at 20.00 -->
+            <!-- Buttons -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Property Value" Margin="20 0 0 0" Grid.Column="0"  />
+                <TextBox Padding="2" Grid.Column="2" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Saved Funds" Margin="20 10 0 0" Grid.Column="0"  />
+                <TextBox Padding="2" Margin="0 10 0 0" Grid.Column="2" />
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Saved Funds" Margin="20 10 0 0" Grid.Column="0"  />
+                <TextBox Padding="2" Margin="0 10 0 0" Grid.Column="2" />
+            </Grid>
+            
+            <!-- Description -->
+            <TextBlock Text="Description"/>
+            <TextBox Padding="2" />
+
+            <!-- Status and Revision -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Status -->
+                <StackPanel Grid.Column="0" Margin="0 0 10 0 ">
+                    <TextBlock Text="Status"/>
+                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
+                </StackPanel>
+
+                <!-- Revision -->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Revision"/>
+                    <TextBox IsReadOnly="True" Background="LightGray"  Padding="2"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Part Number -->
+            <TextBlock Text="Part Number"/>
+            <TextBox IsReadOnly="True" Background="LightGray" Padding="2" />
+
+        </StackPanel>
+    </Border>
+
+</Window>
