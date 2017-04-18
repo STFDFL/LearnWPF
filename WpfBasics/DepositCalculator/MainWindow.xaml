@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfBasics.MainWindow"
+﻿<Window x:Class="DepositCalculator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,15 @@
 
     <Border Padding="10">
         <StackPanel>
-
+            
+            <!-- Title -->
+            <TextBlock Margin="10 10 0 0" FontWeight="Bold">
+                <TextBlock.RenderTransform>
+                    <ScaleTransform ScaleX="1.2" ScaleY="1.2" />
+                </TextBlock.RenderTransform>
+            "WELCOME TO DEPOSIT CALCULATOR by SD"   
+            </TextBlock>
+            
             <!-- Property Value -->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -18,20 +26,8 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Property Value" Margin="0 0 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Grid.Column="2" />
-            </Grid>
-
-            <!-- Size in sqm -->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="2.5*" />
-                    <ColumnDefinition Width="1.5*" />
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="Size in sqm" Margin="0 5 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Margin="0 5 0 0" Grid.Column="2" />
+                <TextBlock Text="Property Value" Padding="2" Margin="0 40 0 0" Grid.Column="1"  />
+                <TextBox x:Name="PropertyValueBox" Padding="2" Margin="0 40 0 0" Grid.Column="2" />
             </Grid>
 
             <!-- Saved Funds -->
@@ -42,8 +38,8 @@
                     <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Saved Funds" Margin="0 10 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Margin="0 10 0 0" Grid.Column="2" />
+                <TextBlock Text="Saved Funds" Padding="2" Margin="0 10 0 0" Grid.Column="1"  />
+                <TextBox x:Name="SavedFundsBox" Padding="2" Margin="0 10 0 0" Grid.Column="2" />
             </Grid>
 
             <!-- Savings per week -->
@@ -54,33 +50,59 @@
                     <ColumnDefinition Width="2.5*" />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Savings per week" Margin="0 5 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Margin="0 5 0 0" Grid.Column="2" />
+                <TextBlock Text="Savings per week" Padding="2" Margin="0 10 0 0" Grid.Column="1"  />
+                <TextBox x:Name="SavingsPerWeekBox" Padding="2" Margin="0 10 0 0" Grid.Column="2" />
             </Grid>
-           
-            <!-- First Home Grant Checkbox -->
+
+            <!-- Deposit % -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Deposit %" Padding="2" Margin="0 20 0 0" Grid.Column="2"  />
+                <ComboBox SelectedIndex="0" Padding="2" x:Name="CBDeposit" SelectionChanged="ComboBox_SelectionChanged" Margin="0 20 0 0" Grid.Column="3">
+                    <ComboBoxItem>5</ComboBoxItem>
+                    <ComboBoxItem>10</ComboBoxItem>
+                    <ComboBoxItem>15</ComboBoxItem>
+                    <ComboBoxItem>20</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+
+            <!-- First Home Grant Checkbox-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <CheckBox Content=" First Home Grant" Margin="0 20 0 0" Grid.Column="1" />
+                <CheckBox Content=" First Home" x:Name="FHCheckbox" Checked="FHCheckbox_Checked" Unchecked="FHCheckbox_Unchecked" Margin="0 20 0 0" Grid.Column="1" />
             </Grid>
 
-            <!-- Upfront Costs -->
-            <TextBlock Text="Upfront Costs includes a rouh estimate of Stamp Duty and other &#x0a;legal fees that usually apply within 30 days from settlement." Margin="10 10 0 0"/>
+            <!-- Newly Built Checkbox -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="2.5*" />
-                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Upfront Costs" Margin="0 10 0 0" Grid.Column="1"  />
-                <TextBox  IsReadOnly="True" Padding="2" Margin="0 10 0 0" Grid.Column="2" Background="LightGray"/>
+                <CheckBox Content="Newly Built Property" x:Name="NBCheckbox" Checked="NBCheckbox_Checked" Unchecked="NBCheckbox_Unchecked" Margin="0 10 0 0" Grid.Column="1" />
             </Grid>
 
+            <!-- Im Australian Checkbox-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Im Australian" x:Name="ImOzCheckbox" Checked="ImOzCheckbox_Checked" Unchecked="ImOzCheckbox_Unchecked"  Margin="0 10 0 0" Grid.Column="1" />
+            </Grid>
+            
             <!-- Button Calculate -->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -88,11 +110,24 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
-                <Button Content="CALCULATE" Padding="2" Margin="0 40 0 0" Grid.Column="1" />
+
+                <Button x:Name="CalculateButton" Content="CALCULATE" Padding="2" Margin="0 40 0 0" Grid.Column="1" 
+                        Click="CalculateDepositAndGoal"/>
             </Grid>
-            <!-- Weeks to goal -->
             
+            <!-- Upfront Costs -->
+            <TextBlock Text="Upfront Costs includes a rough estimate of Stamp Duty and other &#x0a;    legal fees that usually apply within 30 days from settlement." Margin= "10 30 0 0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="2.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Upfront Costs" Padding="2" Margin="0 10 0 0" Grid.Column="1"  />
+                <TextBox x:Name="UpfrontCostBox" IsReadOnly="True" Padding="2" Margin="0 10 0 0" Grid.Column="2" Background="LightGray"/>
+            </Grid>
+
             <!-- Deposit Required -->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -101,8 +136,8 @@
                     <ColumnDefinition Width="2.5*" />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Deposit Required" Margin="0 20 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Margin="0 20 0 0" Grid.Column="2" />
+                <TextBlock Text="Deposit Required" Padding="2" Margin="0 30 0 0" Grid.Column="1"  />
+                <TextBox x:Name="DepositRequiredBox" IsReadOnly="True" Padding="2" Background="LightGray"  Margin="0 30 0 0" Grid.Column="2" />
             </Grid>
             <!-- Weeks to goal -->
             <Grid>
@@ -112,8 +147,8 @@
                     <ColumnDefinition Width="2.5*" />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Weeks to goal" Margin="0 20 0 0" Grid.Column="1"  />
-                <TextBox Padding="2" Margin="0 20 0 0" Grid.Column="2" />
+                <TextBlock Text="Weeks to goal" Padding="2" Margin="0 15 0 0" Grid.Column="1"  />
+                <TextBox x:Name="WeeksToGoalBox" IsReadOnly="True" Padding="2" Background="LightGray" Margin="0 15 0 0" Grid.Column="2" />
             </Grid>
 
 
