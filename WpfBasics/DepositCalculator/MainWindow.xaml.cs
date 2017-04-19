@@ -25,8 +25,6 @@ namespace DepositCalculator
         private float _weeklySavings = 0;
         private float _depositPercentage = 0;
         private bool _firstH = false;
-        private bool _newlyBuilt = false;
-        private bool _imOz = false;
         private float FHOG = 10000;
 
         private float _upfrontCost;
@@ -63,7 +61,7 @@ namespace DepositCalculator
 
         private float CalculateUpfrontCost(float homeValue)
         {
-            if(_firstH && _newlyBuilt && _imOz )
+            if(_firstH)
             {
                 _upfrontCost = (homeValue / 100) * 4;
             }
@@ -72,26 +70,6 @@ namespace DepositCalculator
                 _upfrontCost = (homeValue / 100) * 9;
             }
             return _upfrontCost;
-        }
-
-        private void ImOzCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            _imOz = true;
-        }
-
-        private void ImOzCheckbox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            _imOz = false;
-        }
-
-        private void NBCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            _newlyBuilt = true;
-        }
-
-        private void NBCheckbox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            _newlyBuilt = false;
         }
 
         private void FHCheckbox_Checked(object sender, RoutedEventArgs e)
@@ -114,6 +92,12 @@ namespace DepositCalculator
                 _depositPercentage = 15;
             if (CBDeposit.SelectedIndex == 3)
                 _depositPercentage = 20;
+        }
+
+        private void FHOGButton_Click(object sender, RoutedEventArgs e)
+        {
+            fhogWindow p = new fhogWindow();
+            p.Show();
         }
     }
 }

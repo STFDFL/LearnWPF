@@ -80,29 +80,21 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <CheckBox Content=" First Home" x:Name="FHCheckbox" Checked="FHCheckbox_Checked" Unchecked="FHCheckbox_Unchecked" Margin="0 20 0 0" Grid.Column="1" />
+                <CheckBox Content=" Eligible for FHOG" x:Name="FHCheckbox" Checked="FHCheckbox_Checked" Unchecked="FHCheckbox_Unchecked" Margin="0 20 0 0" Grid.Column="1" />
             </Grid>
 
-            <!-- Newly Built Checkbox -->
+            <!-- Button FHOG -->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <CheckBox Content="Newly Built Property" x:Name="NBCheckbox" Checked="NBCheckbox_Checked" Unchecked="NBCheckbox_Unchecked" Margin="0 10 0 0" Grid.Column="1" />
+
+                <Button x:Name="FHOGButton" Content="What is FHOG?" Padding="2" Margin="0 10 0 0" Grid.Column="1" 
+                        Click="FHOGButton_Click"/>
             </Grid>
 
-            <!-- Im Australian Checkbox-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <CheckBox Content="Im Australian" x:Name="ImOzCheckbox" Checked="ImOzCheckbox_Checked" Unchecked="ImOzCheckbox_Unchecked"  Margin="0 10 0 0" Grid.Column="1" />
-            </Grid>
-            
             <!-- Button Calculate -->
             <Grid>
                 <Grid.ColumnDefinitions>
